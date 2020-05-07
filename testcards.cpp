@@ -91,9 +91,10 @@ void test_play() {
 
   Alice->play(Bob);
   Bob->play(Alice);
-  std::cerr << "testplay" << std::endl;
   Alice->print_cards();
   Bob->print_cards();
+  std::cerr << "testplay" << std::endl;
+
 }
 
 int main() {
