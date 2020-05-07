@@ -88,11 +88,10 @@ void test_play() {
 
   Player* Alice = new Player(testcards1, "Alice");
   Player* Bob = new Player(testcards2, "Bob");
-  std::cerr << "testplay?" << std::endl;
 
   Alice->play(Bob);
   Bob->play(Alice);
-
+  std::cerr << "testplay" << std::endl;
   Alice->print_cards();
   Bob->print_cards();
 }
