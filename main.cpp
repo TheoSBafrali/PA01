@@ -35,8 +35,9 @@ int main(int argv, char **argc) {
     }
     alice_turn = !(alice_turn);
   }
-
+  std::cout << std::endl;
   Alice->print_cards();
+  std::cout << std::endl;
   Bob->print_cards();
 
   // Create two objects of the class you defined
