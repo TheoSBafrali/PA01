@@ -6,6 +6,7 @@
 #include <fstream>
 #include <iostream>
 #include <vector>
+#include <cerr>
 using namespace std;
 
 
@@ -14,11 +15,12 @@ void test_contains() {
   ifstream testcards("ycards.txt");
   Player* p = new Player(testcards, "p");
   Card tmp(nullptr, 's', '2');
-  if(p->contains(tmp)) {
-    std::cout << "contains passed" << std::endl;
-  } else {
-      std::cout << "contains failed" << std::endl;
-
+  if(p) {
+    if(p->contains(tmp)) {
+      std::cout << "contains passed" << std::endl;
+    } else {
+        std::cout << "contains failed" << std::endl;
+    }
   }
 }
 void test_remove() {
@@ -53,7 +55,6 @@ void test_card_equality_operator() {
 
   } else {
     std::cout << "negative test case nay" << std::endl;
-
   }
   return;
 }
@@ -88,6 +89,7 @@ void test_play() {
 
   Player* Alice = new Player(testcards1, "Alice");
   Player* Bob = new Player(testcards2, "Bob");
+  std::cerr << "testplay?" << std::endl;
 
   Alice->play(Bob);
   Bob->play(Alice);
