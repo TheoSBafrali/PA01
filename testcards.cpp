@@ -11,9 +11,9 @@ using namespace std;
 
 void test_contains() {
   std::cout << "contains test" << std::endl;
-  ifstream testcards("testcards.txt");
+  ifstream testcards("ycards.txt");
   Player* p = new Player(testcards, "p");
-  Card tmp(nullptr, 's', 'a');
+  Card tmp(nullptr, 's', '2');
   if(p->contains(tmp)) {
     std::cout << "contains passed" << std::endl;
   } else {
@@ -23,7 +23,7 @@ void test_contains() {
 }
 void test_remove() {
   std::cout << "remove test" << std::endl;
-  ifstream testcards("testcards.txt");
+  ifstream testcards("ycards.txt");
 
   Player* p = new Player(testcards, "p");
   Card tmp(*(p->get_head()->next_));
@@ -59,12 +59,12 @@ void test_card_equality_operator() {
 }
 
 void test_constructor() {
-  ifstream testcards("testcards.txt");
+  ifstream testcards("ycards.txt");
   // Player constructor called no?
   std::cout << "constructor test" << std::endl;
   Player *p = new Player(testcards, "p");
-  Card c1(nullptr, 'c', '5');
-  Card c2(&c1, 's', 'a');
+  Card c1(nullptr, 'h', '3');
+  Card c2(&c1, 's', '2');
   if (p->get_head() && p->get_head()->next_) {
     if (c1 == *(p->get_head()) && c2 == *(p->get_head()->next_)) {
       std::cout << "constructor works!" << std::endl;
@@ -83,13 +83,11 @@ void test_constructor() {
 
 void test_play() {
   std::cout << "play test" << std::endl;
-  ifstream testcards1("testcards.txt");
-  ifstream testcards2("testcards.txt");
+  ifstream testcards1("ycards.txt");
+  ifstream testcards2("zcards.txt");
 
   Player* Alice = new Player(testcards1, "Alice");
   Player* Bob = new Player(testcards2, "Bob");
-
-
 
   Alice->play(Bob);
   Bob->play(Alice);
