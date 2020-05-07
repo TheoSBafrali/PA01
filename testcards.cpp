@@ -93,8 +93,6 @@ void test_play() {
   Bob->play(Alice);
   Alice->print_cards();
   Bob->print_cards();
-  std::cerr << "testplay" << std::endl;
-
 }
 
 int main() {
